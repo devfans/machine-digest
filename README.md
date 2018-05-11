@@ -1,4 +1,9 @@
 # machine-digest
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
+
 make digest of the running machine
 
 ## Installation
@@ -36,3 +41,13 @@ md.add(attrs)
 // change encryption secret
 md.secret = "your secret"
 ```
+
+[npm-image]: https://img.shields.io/npm/v/machine-digest.svg
+[npm-url]: https://npmjs.org/package/machine-digest
+[travis-image]: https://img.shields.io/travis/devfans/machine-digest/master.svg
+[travis-url]: https://travis-ci.org/devfans/machine-digest
+[coveralls-image]: https://img.shields.io/coveralls/devfans/machine-digest/master.svg
+[coveralls-url]: https://coveralls.io/r/devfans/machine-digest?branch=master
+[downloads-image]: https://img.shields.io/npm/dm/machine-digest.svg
+[downloads-url]: https://npmjs.org/package/machine-digest
+
