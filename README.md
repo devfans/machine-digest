@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
-make digest of the running machine
+make digest and uuid of the running machine
 
 ## Installation
 

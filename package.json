@@ -1,7 +1,7 @@
 {
   "name": "machine-digest",
-  "version": "0.0.1",
-  "description": "make digest of the running machine",
+  "version": "0.0.2",
+  "description": "make digest and uuid of the running machine",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --plugin markdown --ext js,md .",
