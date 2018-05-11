@@ -40,7 +40,7 @@ class Digest {
   }
 
   _make() {
-    const ss = Object.keys(this.metas).map(k=>`${k}-|-${this.metas[k]}`)
+    const ss = Object.keys(this.metas).sort().map(k=>`${k}-|-${this.metas[k]}`).join('-')
     const _raw = `M${ss}D`
     const raw = this._compose(_raw)
     return this._encrypt(raw)
