@@ -14,6 +14,13 @@ const md = require('machine-digest')
 
 // get result, default make hex digest
 md.get()
+{ digest: 'a5d53e51a35755257c3c5fb38f77ec9bd401ab9241803216875de36648c2',
+  machine: 
+   { OS_TYPE: 'Darwin',
+     OS_PLATFORM: 'darwin',
+     OS_ARCH: 'x64',
+     OS_CPU: 'Intel(R) Core(TM) i5-4278U CPU @ 2.60GHz.Intel(R) Core(TM) i5-4278U CPU @ 2.60GHz.Intel(R) Core(TM) i5-4278U CPU @ 2.60GHz.Intel(R) Core(TM) i5-4278U CPU @ 2.60GHz',
+     id: '576D4728-C140-523C-B801-EFE5EIUHF7F9' } }
 
 
 // get different digests
