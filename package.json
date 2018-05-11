@@ -13,7 +13,9 @@
     "physical",
     "machine",
     "digest",
-    "hardware"
+    "hardware",
+    "uuid",
+    "unique"
   ],
   "author": "stefanliu@outlook.com",
   "license": "MIT",
