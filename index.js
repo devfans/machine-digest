@@ -25,7 +25,7 @@ class Digest {
       if (this.metas.OS_PLATFORM == 'darwin') {
         _id = /IOPlatformUUID"\s=\s"([^\s]+)"/.exec(child_process.execSync('ioreg -rd1 -c IOPlatformExpertDevice').toString('utf8'))
         if (_id) _id = _id[1]
-      } else if (this.metas.OS_PLATFORM = 'linux') {
+      } else if (this.metas.OS_PLATFORM == 'linux') {
         _id = cmd('cat /var/lib/dbus/machine-id').toString('utf8')
       } else if (['win32', 'win64'].includes(this.metas.OS_PLATFORM)) {
         _id = cmd('wmic CsProduct Get UUID').toString('utf8').replace("\n", '')
