@@ -23,19 +23,19 @@ class Digest {
     let _id
     try {
       if (this.metas.OS_PLATFORM == 'darwin') {
-        _id = /IOPlatformUUID"\s=\s"([^\s]+)"/.exec(child_process.execSync('ioreg -rd1 -c IOPlatformExpertDevice').toString('utf8'))
+        _id = /IOPlatformUUID"\s=\s"([^\s]+)"/.exec(cmd('ioreg -rd1 -c IOPlatformExpertDevice').toString('utf8'))
         if (_id) _id = _id[1]
       } else if (this.metas.OS_PLATFORM == 'linux') {
         _id = cmd('cat /var/lib/dbus/machine-id').toString('utf8')
       } else if (['win32', 'win64'].includes(this.metas.OS_PLATFORM)) {
-        _id = cmd('wmic CsProduct Get UUID').toString('utf8').replace("\n", '')
+        _id = cmd('wmic CsProduct Get UUID').toString('utf8').replace("\n", '').replace('UUID', '')
       }
     } catch (e) {}
   
     this.metas.id = _id == null? "machine unique id": _id
   }
 
-  add(options) {
+  put(options) {
     if (typeof(options == "object")) Object.assign(this.metas, options)
   }
 
@@ -59,6 +59,18 @@ class Digest {
     return {digest, machine: this.metas}
   }
 
+  uuid() {
+    return this._make().digest('hex')
+  }
+  
+  UUID() {
+    return this._encrypt(this.metas.id).digest('hex')
+  }
+  
+  rawUUID() {
+    return this.metas.id
+  }
+  
   digest(enc) {
     return this._make().digest(enc)
   }
