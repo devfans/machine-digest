@@ -1,6 +1,6 @@
 {
   "name": "machine-digest",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "make digest and uuid of the running machine",
   "main": "index.js",
   "scripts": {
