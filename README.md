@@ -6,6 +6,10 @@
 
 make digest and uuid of the running machine
 
+## Features
+Get UUID of the running machine, and make sha256 digest of the combined hardware and OS info with custom secret.
+Supports Linux, MacOS and Windows.
+
 ## Installation
 
 ```
@@ -17,7 +21,11 @@ npm i --save machine-digest
 ```
 const md = require('machine-digest')
 
-// get result, default make hex digest
+const uuid = md.uuid()           // sha256 hex digest of combined info
+const UUID = md.UUID()           // sha256 hex digest of only hardware UUID
+const rawUUID = md.rawUUID()     // raw hardware UUID
+
+// get summary, default make hex digest
 md.get()
 { digest: 'a5d53e51a35755257c3c5fb38f77ec9bd401ab9241803216875de36648c2',
   machine: 
@@ -36,7 +44,7 @@ md.digest('ascii')
 
 // add or overwrite machine attribute
 const attrs = {hostname: os.hostname()}
-md.add(attrs)
+md.put(attrs)
 
 // change encryption secret
 md.secret = "your secret"
